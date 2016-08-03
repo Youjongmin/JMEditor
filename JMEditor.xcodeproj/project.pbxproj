@@ -14,6 +14,7 @@
 		882F7E951D5089030017F920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882F7E931D5089030017F920 /* LaunchScreen.storyboard */; };
 		882F7EA01D5089030017F920 /* JMEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882F7E9F1D5089030017F920 /* JMEditorTests.swift */; };
 		882F7EAB1D5089030017F920 /* JMEditorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882F7EAA1D5089030017F920 /* JMEditorUITests.swift */; };
+		88597B221D5189FB00378759 /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88597B211D5189FB00378759 /* TextViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		882F7EA61D5089030017F920 /* JMEditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JMEditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		882F7EAA1D5089030017F920 /* JMEditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMEditorUITests.swift; sourceTree = "<group>"; };
 		882F7EAC1D5089030017F920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88597B211D5189FB00378759 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				882F7E8A1D5089030017F920 /* AppDelegate.swift */,
 				882F7E8C1D5089030017F920 /* ViewController.swift */,
+				88597B211D5189FB00378759 /* TextViewTableViewCell.swift */,
 				882F7E8E1D5089030017F920 /* Main.storyboard */,
 				882F7E911D5089030017F920 /* Assets.xcassets */,
 				882F7E931D5089030017F920 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				882F7E8D1D5089030017F920 /* ViewController.swift in Sources */,
 				882F7E8B1D5089030017F920 /* AppDelegate.swift in Sources */,
+				88597B221D5189FB00378759 /* TextViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +486,7 @@
 				882F7EB11D5089030017F920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882F7EB21D5089030017F920 /* Build configuration list for PBXNativeTarget "JMEditorTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +495,7 @@
 				882F7EB41D5089030017F920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882F7EB51D5089030017F920 /* Build configuration list for PBXNativeTarget "JMEditorUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +504,7 @@
 				882F7EB71D5089030017F920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
