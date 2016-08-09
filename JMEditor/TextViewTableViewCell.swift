@@ -8,10 +8,34 @@
 
 import UIKit
 
+protocol Tableviewtextdelegate {
+    
+    func TableviewtextView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool
+    func TabletextViewDidChange(textView: UITextView)
+}
+
 class TextViewTableViewCell: UITableViewCell {
 
-    var textView : UITextView!
+    var delegate : Tableviewtextdelegate?
+    
+    var textView : UITextView = {
+       
+        let tv = UITextView()
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.font = UIFont.systemFontOfSize(14)
+        tv.userInteractionEnabled = true
+        tv.autocapitalizationType = .None
+        tv.autocorrectionType = .No
+        tv.contentMode = .Top
+        tv.bounces = false
+        tv.editable = true
+        tv.tag = 10603321
+        
+        return tv
+    }()
     var lb_pacehold : UILabel!
+    var tapBlock: dispatch_block_t?
+
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,16 +64,8 @@ class TextViewTableViewCell: UITableViewCell {
 
     
     func setConfig(){
-        textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = UIFont.systemFontOfSize(14)
-        textView.userInteractionEnabled = true
-        textView.autocapitalizationType = .None
-        textView.autocorrectionType = .No
-        textView.contentMode = .Top
-        textView.bounces = false
-        textView.editable = true
-        textView.tag = 10603321
+       
+        textView.delegate = self
         //        textView.backgroundColor = UIColor.yellowColor()
         //        textView.contentInset = UIEdgeInsetsMake(0, 8, 0, 0)
         self.contentView.addSubview(textView)
@@ -84,4 +100,25 @@ class TextViewTableViewCell: UITableViewCell {
         
     }
 
+}
+
+extension TextViewTableViewCell : UITextViewDelegate {
+    func textViewDidBeginEditing(textView: UITextView) {
+        tapBlock!()
+    }
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if delegate != nil {
+            
+            return (self.delegate?.TableviewtextView(textView, shouldChangeTextInRange: range, replacementText: text))!
+        }
+        
+        return true
+    }
+    func textViewDidChange(textView: UITextView) {
+        
+        if delegate != nil {
+            
+            self.delegate!.TabletextViewDidChange(textView)
+        }
+    }
 }
